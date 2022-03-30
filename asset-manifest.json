@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/RentForMe/static/css/main.13f32758.css",
+    "main.js": "/RentForMe/static/js/main.299c75a2.js",
+    "index.html": "/RentForMe/index.html",
+    "main.13f32758.css.map": "/RentForMe/static/css/main.13f32758.css.map",
+    "main.299c75a2.js.map": "/RentForMe/static/js/main.299c75a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.13f32758.css",
+    "static/js/main.299c75a2.js"
+  ]
+}
