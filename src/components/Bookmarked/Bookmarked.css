@@ -1,0 +1,120 @@
+section {
+  margin-bottom: 2rem;
+}
+
+.bookmark__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+}
+
+.bookmark__container {
+  height: 65px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 0.5rem;
+  justify-items: flex-start;
+  align-items: center;
+  background: rgb(255, 56, 92);
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+.bookmark__link{
+  text-decoration: none;
+}
+
+.bookmark__container img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bookmark__container p {
+  font-weight: bolder;
+  color: white;
+  font-size: 0.7rem;
+}
+
+.bookmark__container span {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  color: white;
+  font-size: 0.9rem;
+  background: #da2c4c;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 1350px) {
+  .bookmark__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bookmark__container {
+    height: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
+  .bookmark__container p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 970px) {
+  .bookmark__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bookmark__container {
+    height: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
+  .bookmark__container p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .bookmark__container p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .bookmark__container {
+    height: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
+  .bookmark__container p {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .bookmark__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .bookmark__container p {
+    font-size: .9rem;
+  }
+}

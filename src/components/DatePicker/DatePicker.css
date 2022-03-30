@@ -1,0 +1,65 @@
+/* .datePicker__wrapper{
+    width: 100%;
+}
+
+.datePicker{
+    max-width: 100%;
+    min-width: 100%;
+    display: block;
+}  */
+
+/*Will edit selected date or the endpoints of a range of dates */
+.CalendarDay__selected {
+  background: rgb(255,56,92);
+  color: white;
+}
+
+/* Will edit when hovered over. _span style also has this property */
+.CalendarDay__selected:hover {
+  background: rgb(255,56,92);
+  color: white;
+}
+
+/* Will edit when the second date (end date) in a range of dates
+is not yet selected. Edits the dates between your mouse and said date */
+.CalendarDay__hovered_span:hover,
+.CalendarDay__hovered_span {
+  background: rgb(248, 74, 106);
+  color: white;
+}
+
+
+
+/* .rs-picker-default,
+.rs-picker-toggle.rs-btn {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  min-width: 90%;
+  width: 270px;
+  text-align: center;
+}
+
+.rs-picker-default .rs-picker-toggle {
+  position: relative;
+  z-index: 5;
+  margin-right: 50px;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  padding-left: 30px;
+  border: 1px solid rgb(153, 17, 42);
+}
+
+.rs-picker-toggle-caret {
+  position: absolute;
+  display: inline-block;
+  top: 8px;
+  left: 2px;
+  color: rgb(153, 17, 42);
+  font-size: 1rem;
+}
+
+.rs-picker-date-inline{
+    background-color: red !important;
+    color: aliceblue !important;
+} */

@@ -1,0 +1,131 @@
+.main__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.8rem;
+}
+
+.house__container {
+  display: flex;
+  flex-direction: column;
+  background: rgb(223, 222, 222);
+  border-radius: 3px;
+  position: relative;
+}
+
+.cover__image {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 3px 3px 0 0;
+  margin-bottom: 1rem !important;
+}
+
+.house__container:hover {
+  box-shadow: 4px 4px 6px rgb(216, 216, 216);
+  transition: all 0.3s ease-in-out;
+}
+
+.house__container h1 {
+  font-size: 1.4rem !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 10px !important;
+  flex: 1;
+  color: rgb(56, 54, 54) !important;
+}
+
+.house__container h2 {
+  font-size: 1.3rem !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 10px !important;
+  flex: 1;
+  color: rgb(56, 54, 54) !important;
+}
+
+.house__container h3 {
+  font-size: 0.9rem !important;
+  margin-bottom: 0.9rem !important;
+  padding: 0 10px !important;
+  flex: 1;
+  color: rgb(56, 54, 54) !important;
+}
+
+.description {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0 10px;
+  flex: 1;
+  position: relative;
+  max-height: 24px;
+  overflow: hidden;
+  padding-right: 0.6rem;
+}
+
+.description::before {
+  position: absolute;
+  content: "...";
+  bottom: 0;
+  right: 15px;
+  top: 1px;
+}
+
+.location__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 0.3rem;
+  left: 0.4rem;
+}
+
+.location__header .icon{
+  color: white !important;
+  font-weight: bolder;
+}
+
+.host__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .6rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.single_display_link {
+  padding: 10px;
+}
+
+.single_display_link button {
+  width: 83px;
+  outline: none;
+  border: none;
+  background: rgb(255, 56, 92);
+  color: white;
+  padding: 10px 5px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 970px) {
+  .main__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .main__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

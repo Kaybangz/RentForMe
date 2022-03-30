@@ -1,0 +1,17 @@
+.backToTop {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 999;
+}
+
+.backToTop__icon {
+  color: #ff385c;
+  font-size: 2.5rem;
+  cursor: pointer;
+}

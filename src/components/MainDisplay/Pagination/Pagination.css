@@ -1,0 +1,17 @@
+.pagination__container {
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.page__link {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(255, 56, 92);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
