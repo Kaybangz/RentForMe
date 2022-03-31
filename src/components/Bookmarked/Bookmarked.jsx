@@ -1,7 +1,7 @@
 import React from "react";
 import HomeAnimation from "../Animation/HomeAnimation";
 import "./Bookmarked.css";
-import { Link, Params, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Bookmarked = ({ bookmarked, deleteHandler }) => {
   return (

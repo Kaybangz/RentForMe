@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { data } from "../../Data/Data";
 import HomeAnimation from "../Animation/HomeAnimation";
+import EmptyList from "./EmptyList/EmptyList";
 import Header from "./Header/Header";
 import HouseList from "./HouseList/HouseList";
 import Pagination from "./Pagination/Pagination";
@@ -13,7 +14,7 @@ const MainDisplay = ({ handleBookmarked, bookmarked, deleteHandler }) => {
   //State for managing the current page
   const [currPage, setCurrPage] = useState(1);
   //Number of houses to be displayed per page, the value is 6
-  const [housePerPage, setHousePerPage] = useState(6);
+  const [housePerPage] = useState(6);
 
   //Getting the index of the last list
   const indexOfLastList = currPage * housePerPage;
@@ -66,7 +67,7 @@ const MainDisplay = ({ handleBookmarked, bookmarked, deleteHandler }) => {
         />
 
         {/* House listing section */}
-        {!houseData.length ? null : (
+        {!houseData.length ? <EmptyList/> : (
           <HouseList
             houses={currentData}
             handleBookmarked={handleBookmarked}

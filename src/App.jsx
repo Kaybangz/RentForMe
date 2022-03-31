@@ -6,9 +6,9 @@ import SingleDisplay from "./components/SingleDisplay/SingleDisplay";
 import Bookmarked from "./components/Bookmarked/Bookmarked";
 import { data } from "./Data/Data";
 import BackToTop from "./components/BackToTopBtn/BackToTop";
-import DatePicker from "./components/DatePicker/DatePicker";
 import LandLordForm from "./components/LandLordForm/LandLordForm";
 import { AnimatePresence } from "framer-motion";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   //State for managing bookmark button behaviour
@@ -16,9 +16,6 @@ const App = () => {
 
   // Creating an empty array to hold the bookmarked houses
   const [bookmarked, setBookmarked] = useState([]);
-
-  // State to toggle the bookmark button i.e do and undo bookmark function
-  const [isAdded, setIsAdded] = useState(false);
 
   // Function to add house to the bookmarked array
   const handleBookmarked = (houseData) => {
@@ -59,9 +56,9 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <main>
+    <main className="main__wrapper">
       <section className="container">
-        
+        <AnimatePresence exitBeforeEnter>
           <Routes key={location.pathname} location={location}>
             <Route
               path="/"
@@ -85,9 +82,10 @@ const App = () => {
 
             <Route path="/landLordForm" element={<LandLordForm />} />
           </Routes>
-
+        </AnimatePresence>
       </section>
       <BackToTop />
+      <Footer/>
     </main>
   );
 };

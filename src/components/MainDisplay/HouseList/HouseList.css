@@ -58,13 +58,14 @@
   max-height: 24px;
   overflow: hidden;
   padding-right: 0.6rem;
+  width: 97%;
 }
 
 .description::before {
   position: absolute;
   content: "...";
   bottom: 0;
-  right: 15px;
+  right: 0;
   top: 1px;
 }
 
@@ -102,6 +103,7 @@
 
 .single_display_link {
   padding: 10px;
+  width: 83px;
 }
 
 .single_display_link button {

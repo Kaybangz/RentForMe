@@ -9,10 +9,15 @@ import {
   BsBookmarkPlus,
   BsFillBookmarkPlusFill,
 } from "react-icons/bs";
+import {BiPhoneCall} from 'react-icons/bi';
 import DatePicker from "../DatePicker/DatePicker";
 import FramerAnimation from "../Animation/FramerAnimation";
 
 const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const agentFee = 30;
 
   //Using the useParams react-router hook to get the id of the selected item
@@ -30,7 +35,6 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
       setHouseData(house);
     }
   }, []);
-
 
   //Setting the react calender date
   const [value, onChange] = useState(new Date());
@@ -71,7 +75,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                   <img
                     src={houseData.cover}
                     className="cover"
-                    alt="cover image"
+                    alt={houseData.name}
                   />
                 </div>
                 <div className="sub__images">
@@ -102,7 +106,11 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
 
                 <div className="host__section">
                   <h1>House owner is {houseData.host}</h1>
-                  <img src={houseData.avatar} alt="host image" />
+                  <img src={houseData.avatar} alt={houseData.host} />
+                </div>
+
+                <div className="host__number">
+                  <h1><span><BiPhoneCall/></span>+{houseData.phoneNumber}</h1>
                 </div>
               </div>
 
@@ -182,12 +190,14 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                             borderBottom: "none",
                           }}
                         >
-                          From {value[0].getDate()}-{value[0].getMonth() + 1}-{value[0].getFullYear()} to {value[1].getDate()}-{value[1].getMonth() + 1}-{value[1].getFullYear()}.
+                          From {value[0].getDate()}-{value[0].getMonth() + 1}-
+                          {value[0].getFullYear()} to {value[1].getDate()}-
+                          {value[1].getMonth() + 1}-{value[1].getFullYear()}.
                         </p>
 
                         <p
                           style={{
-                            marginTop:"1rem",
+                            marginTop: "1rem",
                             marginBottom: "1.5rem",
                             fontSize: "1rem",
                             fontWeight: "700",
@@ -195,7 +205,8 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                           }}
                         >
                           (Please note that you are required to leave on the
-                          night of {value[1].getDate()}-{value[1].getMonth() + 1}-{value[1].getFullYear()}).
+                          night of {value[1].getDate()}-
+                          {value[1].getMonth() + 1}-{value[1].getFullYear()}).
                         </p>
                         <h4 className="total_cost_header">
                           Rent: ${houseData.price} * {numOfDays} = $
@@ -216,7 +227,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
 
                   <div className="booking_btn_container">
                     {showDetails ? (
-                      <Link to="/">
+                      <Link to="/" className="proceed__link">
                         <button className="booking__btn">Proceed &rarr;</button>
                       </Link>
                     ) : (

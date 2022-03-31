@@ -1,9 +1,8 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./HouseList.css";
 import { Link } from "react-router-dom";
 import Bookmarked from "../../Bookmarked/Bookmarked";
 import { VscLocation } from "react-icons/vsc";
-import Pagination from "../Pagination/Pagination";
 
 //Destructured the various props gotten from the mainDisplay component to utilize them here 
 const HouseList = ({ houses, bookmarked, deleteHandler }) => {
@@ -19,7 +18,7 @@ const HouseList = ({ houses, bookmarked, deleteHandler }) => {
             <div key={house.id} className="house__container">
               <img
                 src={house.cover}
-                alt="cover image"
+                alt={house.name}
                 className="cover__image"
               />
               <h1>{house.name}</h1>

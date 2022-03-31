@@ -1,3 +1,7 @@
+.home{
+  width: fit-content;
+}
+
 .landlord_form_container {
   max-width: 500px;
   width: 100%;

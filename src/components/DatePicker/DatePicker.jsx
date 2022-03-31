@@ -11,7 +11,7 @@ const DatePicker = ({
 
   return (
     <div className="datePicker__wrapper">
-      <Calendar selectRange returnValue="range" value={value} minDate={minDate}  onChange={onChange} tileDisable/>
+      <Calendar className="datePicker" selectRange returnValue="range" value={value} minDate={minDate}  onChange={onChange} tileDisable/>
     </div>
   );
 };

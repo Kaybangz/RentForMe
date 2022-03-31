@@ -5,7 +5,14 @@
   font-weight: 500;
   margin-bottom: 4rem;
   margin-top: 2rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.home span{
+  margin-right: 3px;
 }
 
 .home__container {
@@ -50,7 +57,7 @@
 }
 
 .host__section h1 {
-  font-size: 1.1rem;
+  font-size: .9rem;
   color: rgb(119, 5, 26);
   margin-right: 0.3rem;
   text-transform: uppercase;
@@ -62,6 +69,18 @@
   border-radius: 50%;
   object-fit: cover;
   margin-right: 0.5rem;
+}
+
+.host__number h1{
+  display: flex;
+  font-size: 1rem;
+  justify-content: flex-start;
+  color: rgb(119, 5, 26);
+}
+
+.host__number span{
+  margin-right: 3px;
+  font-size: 1.1rem;
 }
 
 .houseName__header {
@@ -184,17 +203,24 @@ li {
 }
 
 .booking__btn {
-  width: 83px;
+  width: 90px;
   outline: none;
   border: none;
   background: rgb(255, 56, 92);
   color: white;
   padding: 10px 5px;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   border-radius: 5px;
   cursor: pointer;
-  flex: 1;
-  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.proceed__link{
+  text-decoration: none;
 }
 
 @media (max-width: 900px) {
@@ -232,12 +258,6 @@ li {
   .houseName__header {
     width: 100%;
     font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .home__container p {
-    text-align: justify;
   }
 }
 
