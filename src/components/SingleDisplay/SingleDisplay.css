@@ -54,32 +54,36 @@
   margin-right: 0.5rem;
 }
 
-.host__number{
+.host__number {
   margin-top: 1rem;
 }
 
-.host__number h1{
+.host__number h1 {
   display: flex;
   font-size: 1rem;
   justify-content: flex-start;
   color: rgb(119, 5, 26);
 }
 
-.host__number span{
+.host__number span {
   margin-right: 3px;
   font-size: 1.1rem;
 }
 
-.house__address h1{
+.house__address h1 {
   display: flex;
   font-size: 1rem;
   justify-content: flex-start;
   color: rgb(119, 5, 26);
 }
 
-.house__address span{
+.house__address span {
   margin-right: 3px;
   font-size: 1.1rem;
+}
+
+.house__address .icon {
+  color: rgb(119, 5, 26);
 }
 
 .houseName__header {
@@ -218,7 +222,7 @@ li {
   text-transform: uppercase;
 }
 
-.proceed__link{
+.proceed__link {
   text-decoration: none;
 }
 

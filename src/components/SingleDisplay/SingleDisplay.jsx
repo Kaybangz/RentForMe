@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { data } from "../../Data/Data";
 import "./SingleDisplay.css";
-import {
-  BsStarHalf,
-  BsStarFill,
-  BsCheck2Circle
-} from "react-icons/bs";
-import {AiOutlineHeart, AiFillHeart} from "react-icons/ai";
+import { BsStarHalf, BsStarFill, BsCheck2Circle } from "react-icons/bs";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
-import { GrLocationPin } from "react-icons/gr";
+import { MdLocationOn } from "react-icons/md";
 import DatePicker from "../DatePicker/DatePicker";
 import FramerAnimation from "../Animation/FramerAnimation";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
@@ -66,7 +62,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
   return (
     <FramerAnimation>
       <>
-        <GoBackBtn/>
+        <GoBackBtn />
 
         {houseData ? (
           <main className="home__wrapper">
@@ -114,7 +110,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                 <div className="house__address">
                   <h1>
                     <span>
-                      <GrLocationPin />
+                      <MdLocationOn className="icon" />
                     </span>
                     {houseData.address}
                   </h1>

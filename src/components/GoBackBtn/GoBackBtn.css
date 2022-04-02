@@ -1,20 +1,26 @@
 .goBackBtn {
     width: fit-content;
     cursor: pointer;
+    height: 40px;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
 }
 
 .goBackBtn .btn {
     outline: none;
     padding-left: none;
     background-color: inherit;
+    height: 35px;
     padding: 10px;
     font-size: 1.1rem;
     border: 1px solid rgb(255, 56, 92);
     border-radius: 5px;
     color: rgb(255, 56, 92);
     font-weight: 500;
-    margin-bottom: 4rem;
-    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     font-weight: bold;
     transition: all .2s ease-in-out;
 }
