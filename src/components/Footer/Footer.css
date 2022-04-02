@@ -3,8 +3,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 56, 92);
-    color: white;
+    color: black;
     font-size: 1.1rem;
     padding: 10px;
+    margin-top: 3rem;
+    font-weight: 700;
 }

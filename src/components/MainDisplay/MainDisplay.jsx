@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { data } from "../../Data/Data";
 import HomeAnimation from "../Animation/HomeAnimation";
+import Footer from "../Footer/Footer";
 import EmptyList from "./EmptyList/EmptyList";
 import Header from "./Header/Header";
 import HouseList from "./HouseList/HouseList";
@@ -85,6 +86,7 @@ const MainDisplay = ({ handleBookmarked, bookmarked, deleteHandler }) => {
           paginate={paginate}
         />
       </div>
+      <Footer/>
     </HomeAnimation>
   );
 };

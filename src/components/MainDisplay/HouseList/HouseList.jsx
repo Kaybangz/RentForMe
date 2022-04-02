@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./HouseList.css";
 import { Link } from "react-router-dom";
 import Bookmarked from "../../Bookmarked/Bookmarked";
@@ -6,7 +6,6 @@ import { VscLocation } from "react-icons/vsc";
 
 //Destructured the various props gotten from the mainDisplay component to utilize them here 
 const HouseList = ({ houses, bookmarked, deleteHandler }) => {
-
   return (
     <div className="wrapper">
       {/* The bookmarked data gotten from the Bookmarked component */}
@@ -15,7 +14,7 @@ const HouseList = ({ houses, bookmarked, deleteHandler }) => {
         {/* Looping through the destructured houses prop to display the various property values */}
         {houses.map((house) => {
           return (
-            <div key={house.id} className="house__container">
+            <div key={house.name} className="house__container">
               <img
                 src={house.cover}
                 alt={house.name}

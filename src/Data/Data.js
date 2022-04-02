@@ -5,7 +5,7 @@ export const data = [
       "https://a0.muscache.com/im/pictures/85817892-84a6-4c6d-b3b7-db270775bb97.jpg?im_w=960",
     name: "Direct Seaview 1 Bedroom Private apartment Lekki",
     description:
-      "Soak up in a cosy oceanview fully renovated apartment. If oceanview, jet skiing, fishingor just ride on horses across the ocean is your thing or you just a cosy relaxation getaway, this is the right place for you! One bedroom fully furnished with direct Ocean view from the living room located in a very serene and secured estate in Lekki Phase 1. The apartment is for short stay or long stay with home away from home experience.",
+      "Soak up in a cosy oceanview fully renovated apartment. If oceanview, jet skiing, fishing or just ride on horses across the ocean is your thing or you just a cosy relaxation getaway, this is the right place for you! One bedroom fully furnished with direct Ocean view from the living room located in a very serene and secured estate in Lekki Phase 1. The apartment is for short stay or long stay with home away from home experience.",
     price: 58,
     images: [
       "https://a0.muscache.com/im/pictures/188dca60-f199-4a1d-80cf-b319c4463ba0.jpg?im_w=720",

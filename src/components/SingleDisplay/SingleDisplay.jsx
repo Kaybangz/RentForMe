@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { data } from "../../Data/Data";
 import "./SingleDisplay.css";
 import {
@@ -9,9 +9,10 @@ import {
   BsBookmarkPlus,
   BsFillBookmarkPlusFill,
 } from "react-icons/bs";
-import {BiPhoneCall} from 'react-icons/bi';
+import { BiPhoneCall } from "react-icons/bi";
 import DatePicker from "../DatePicker/DatePicker";
 import FramerAnimation from "../Animation/FramerAnimation";
+import HomeBtn from "../HomeBtn/HomeBtn";
 
 const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
   useEffect(() => {
@@ -34,10 +35,13 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
     if (house) {
       setHouseData(house);
     }
-  }, []);
+  }, [id]);
 
   //Setting the react calender date
   const [value, onChange] = useState(new Date());
+
+  // let startMonth = value[0].toLocaleString('default', {month: 'long'});
+  // let endMonth = value[1].toLocaleString('default', {month: 'long'});
 
   //Setting the min date
   const minDate = new Date();
@@ -62,9 +66,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
   return (
     <FramerAnimation>
       <>
-        <Link className="home" to="/">
-          <span>&#8678;</span> Go Back
-        </Link>
+        <HomeBtn />
 
         {houseData ? (
           <main className="home__wrapper">
@@ -105,12 +107,17 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                 <p>{houseData.description}</p>
 
                 <div className="host__section">
-                  <h1>House owner is {houseData.host}</h1>
                   <img src={houseData.avatar} alt={houseData.host} />
+                  <h1>House owner is {houseData.host}</h1>
                 </div>
 
                 <div className="host__number">
-                  <h1><span><BiPhoneCall/></span>+{houseData.phoneNumber}</h1>
+                  <h1>
+                    <span>
+                      <BiPhoneCall />
+                    </span>
+                    +{houseData.phoneNumber}
+                  </h1>
                 </div>
               </div>
 
@@ -144,7 +151,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                       alignItems: "center",
                     }}
                   >
-                    Enter rent period &#8681;
+                    Enter rent period &darr;
                   </h2>
                   <DatePicker
                     value={value}
@@ -190,9 +197,17 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                             borderBottom: "none",
                           }}
                         >
-                          From {value[0].getDate()}-{value[0].getMonth() + 1}-
-                          {value[0].getFullYear()} to {value[1].getDate()}-
-                          {value[1].getMonth() + 1}-{value[1].getFullYear()}.
+                          From {value[0].getDate()}{" "}
+                          {value[0].toLocaleString("default", {
+                            month: "long",
+                          })}
+                          {" "}
+                          {value[0].getFullYear()} to {value[1].getDate()}{" "}
+                          {value[1].toLocaleString("default", {
+                            month: "long",
+                          })}
+                          {" "}
+                          {value[1].getFullYear()}.
                         </p>
 
                         <p
@@ -205,8 +220,11 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                           }}
                         >
                           (Please note that you are required to leave on the
-                          night of {value[1].getDate()}-
-                          {value[1].getMonth() + 1}-{value[1].getFullYear()}).
+                          night of {value[1].getDate()}{" "}
+                          {value[1].toLocaleString("default", {
+                            month: "long",
+                          })}{" "}
+                          {value[1].getFullYear()}).
                         </p>
                         <h4 className="total_cost_header">
                           Rent: ${houseData.price} * {numOfDays} = $
@@ -228,7 +246,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                   <div className="booking_btn_container">
                     {showDetails ? (
                       <Link to="/" className="proceed__link">
-                        <button className="booking__btn">Proceed &rarr;</button>
+                        <button className="booking__btn">Proceed</button>
                       </Link>
                     ) : (
                       <button

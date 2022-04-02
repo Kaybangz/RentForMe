@@ -1,12 +1,13 @@
-import React from 'react';
-import './Footer.css'
+import React from "react";
+import FramerAnimation from "../Animation/FramerAnimation";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer>
-        &copy;Built by Kaybangz
-    </footer>
-  )
-}
+    <FramerAnimation>
+      <footer>&copy;Built by Kaybangz</footer>
+    </FramerAnimation>
+  );
+};
 
-export default Footer
+export default Footer;

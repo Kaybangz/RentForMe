@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./LandLordForm.css";
 import { stateData } from "./StateData/StateData";
-import { Link } from "react-router-dom";
 import FramerAnimation from "../Animation/FramerAnimation";
+import HomeBtn from "../HomeBtn/HomeBtn";
 
 const LandLordForm = () => {
   const [inputState, setInputState] = useState({
@@ -16,17 +16,15 @@ const LandLordForm = () => {
   const changeHandler = (e) => {
     setInputState({
       ...inputState,
-      [e.target.name]: e.target.target.value,
+      [e.target.target.name]: e.target.target.value,
     });
   };
 
   return (
     <FramerAnimation>
       <main className="form__wrapper">
-        <Link className="home" to="/">
-          <span>&#8678;</span> Go Home
-        </Link>
-        <form className="landlord_form_container">
+        <HomeBtn/>
+        <form className="landlord_form_container" method="POST">
           <div>
             <label>Enter full name</label>
             <input

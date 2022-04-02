@@ -3,12 +3,10 @@ import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import MainDisplay from "./components/MainDisplay/MainDisplay";
 import SingleDisplay from "./components/SingleDisplay/SingleDisplay";
-import Bookmarked from "./components/Bookmarked/Bookmarked";
 import { data } from "./Data/Data";
 import BackToTop from "./components/BackToTopBtn/BackToTop";
 import LandLordForm from "./components/LandLordForm/LandLordForm";
-import { AnimatePresence } from "framer-motion";
-import Footer from "./components/Footer/Footer";
+
 
 const App = () => {
   //State for managing bookmark button behaviour
@@ -19,10 +17,9 @@ const App = () => {
 
   // Function to add house to the bookmarked array
   const handleBookmarked = (houseData) => {
-    let house = data.find((item) => (item.id = houseData.id));
     let existInBookmark = bookmarked.find((item) => item.id === houseData.id);
 
-    if (house && !existInBookmark) {
+    if (!existInBookmark) {
       setBookmarked([...bookmarked, { ...houseData }]);
     }
 
@@ -44,7 +41,7 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem("bookmarked", JSON.stringify(bookmarked));
-  });
+  }, [bookmarked]);
 
   //Delete items from the bookmarked array
   const deleteHandler = (house) => {
@@ -58,8 +55,7 @@ const App = () => {
   return (
     <main className="main__wrapper">
       <section className="container">
-        <AnimatePresence exitBeforeEnter>
-          <Routes key={location.pathname} location={location}>
+          <Routes>
             <Route
               path="/"
               element={
@@ -82,10 +78,9 @@ const App = () => {
 
             <Route path="/landLordForm" element={<LandLordForm />} />
           </Routes>
-        </AnimatePresence>
+    
       </section>
       <BackToTop />
-      <Footer/>
     </main>
   );
 };
