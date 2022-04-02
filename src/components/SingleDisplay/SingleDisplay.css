@@ -11,7 +11,7 @@
   border-radius: 3px;
   object-fit: cover;
   margin-bottom: 0.6rem;
-  border-bottom: 4px double rgb(105, 102, 102);
+  border-bottom: 1px solid rgb(105, 102, 102);
   padding-bottom: 1rem;
 }
 
@@ -20,7 +20,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid rgb(105, 102, 102);
+  border-bottom: 4px double rgb(105, 102, 102);
   padding-bottom: 1rem;
 }
 
@@ -54,6 +54,10 @@
   margin-right: 0.5rem;
 }
 
+.host__number{
+  margin-top: 1rem;
+}
+
 .host__number h1{
   display: flex;
   font-size: 1rem;
@@ -62,6 +66,18 @@
 }
 
 .host__number span{
+  margin-right: 3px;
+  font-size: 1.1rem;
+}
+
+.house__address h1{
+  display: flex;
+  font-size: 1rem;
+  justify-content: flex-start;
+  color: rgb(119, 5, 26);
+}
+
+.house__address span{
   margin-right: 3px;
   font-size: 1.1rem;
 }
@@ -115,7 +131,7 @@
 }
 
 .home__container p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.6rem;
   color: rgb(119, 5, 26);
 }
@@ -153,7 +169,7 @@ li {
 }
 
 .booking__container h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: rgb(119, 5, 26);
 }
@@ -192,7 +208,7 @@ li {
   background: rgb(255, 56, 92);
   color: white;
   padding: 10px 5px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
@@ -234,7 +250,7 @@ li {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid rgb(105, 102, 102);
+    border-bottom: 4px double rgb(105, 102, 102);
     padding-bottom: 1rem;
   }
 
@@ -245,6 +261,11 @@ li {
 
   .host__section h1 {
     font-size: .8rem;
+  }
+
+  .home__container p {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 

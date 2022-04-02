@@ -1,9 +1,9 @@
-.homeBtn {
+.goBackBtn {
     width: fit-content;
     cursor: pointer;
 }
 
-.homeBtn .btn {
+.goBackBtn .btn {
     outline: none;
     padding-left: none;
     background-color: inherit;
@@ -19,12 +19,12 @@
     transition: all .2s ease-in-out;
 }
 
-.homeBtn .btn:hover {
+.goBackBtn .btn:hover {
     background-color: rgb(255, 56, 92);
     color: white;
 }
 
-.homeBtn .btn:active {
+.goBackBtn .btn:active {
     background-color: rgb(255, 56, 92);
     color: white;
 }

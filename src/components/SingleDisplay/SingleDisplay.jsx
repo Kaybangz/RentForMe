@@ -5,14 +5,14 @@ import "./SingleDisplay.css";
 import {
   BsStarHalf,
   BsStarFill,
-  BsCheck2Circle,
-  BsBookmarkPlus,
-  BsFillBookmarkPlusFill,
+  BsCheck2Circle
 } from "react-icons/bs";
+import {AiOutlineHeart, AiFillHeart} from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
+import { GrLocationPin } from "react-icons/gr";
 import DatePicker from "../DatePicker/DatePicker";
 import FramerAnimation from "../Animation/FramerAnimation";
-import HomeBtn from "../HomeBtn/HomeBtn";
+import GoBackBtn from "../GoBackBtn/GoBackBtn";
 
 const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
   useEffect(() => {
@@ -66,7 +66,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
   return (
     <FramerAnimation>
       <>
-        <HomeBtn />
+        <GoBackBtn/>
 
         {houseData ? (
           <main className="home__wrapper">
@@ -96,9 +96,9 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                       onClick={() => handleBookmarked(houseData)}
                     >
                       {active ? (
-                        <BsFillBookmarkPlusFill />
+                        <AiFillHeart />
                       ) : (
-                        <BsBookmarkPlus style={{ color: "rgb(119, 5, 26)" }} />
+                        <AiOutlineHeart style={{ color: "rgb(119, 5, 26)" }} />
                       )}
                     </button>
                   </div>
@@ -108,7 +108,16 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
 
                 <div className="host__section">
                   <img src={houseData.avatar} alt={houseData.host} />
-                  <h1>House owner is {houseData.host}</h1>
+                  <h1>Uploaded by {houseData.host}</h1>
+                </div>
+
+                <div className="house__address">
+                  <h1>
+                    <span>
+                      <GrLocationPin />
+                    </span>
+                    {houseData.address}
+                  </h1>
                 </div>
 
                 <div className="host__number">
@@ -200,13 +209,11 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                           From {value[0].getDate()}{" "}
                           {value[0].toLocaleString("default", {
                             month: "long",
-                          })}
-                          {" "}
+                          })}{" "}
                           {value[0].getFullYear()} to {value[1].getDate()}{" "}
                           {value[1].toLocaleString("default", {
                             month: "long",
-                          })}
-                          {" "}
+                          })}{" "}
                           {value[1].getFullYear()}.
                         </p>
 
@@ -220,7 +227,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                           }}
                         >
                           (Please note that you are required to leave on the
-                          night of {value[1].getDate()}{" "}
+                          morning of {value[1].getDate() + 1}{" "}
                           {value[1].toLocaleString("default", {
                             month: "long",
                           })}{" "}
@@ -245,7 +252,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
 
                   <div className="booking_btn_container">
                     {showDetails ? (
-                      <Link to="/" className="proceed__link">
+                      <Link to="/proceedToRent" className="proceed__link">
                         <button className="booking__btn">Proceed</button>
                       </Link>
                     ) : (

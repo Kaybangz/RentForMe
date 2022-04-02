@@ -24,12 +24,11 @@ const Header = ({
           <Link to="/landLordForm" className="landLord_form_btn">
             <div>
               <span>
-                <p>Upload your house</p>
                 <BsFillHouseFill className="landLord__icon" />
+                <p>Upload your house</p>
               </span>
             </div>
           </Link>
-
         </section>
         <div className="searchBar__container">
           <form onSubmit={submitSearch}>

@@ -1,12 +1,18 @@
 import React from "react";
 import "./HomeBtn.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HomeBtn = () => {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate('/');
+  };
+
   return (
-    <Link to="/" className="homeBtn">
-      <button className="btn">Home</button>
-    </Link>
+    <div className="homeBtn">
+      <button onClick={goBack} className="btn">Home</button>
+    </div>
   );
 };
 

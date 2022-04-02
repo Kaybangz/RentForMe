@@ -2,36 +2,37 @@ import React, { useState } from "react";
 import "./LandLordForm.css";
 import { stateData } from "./StateData/StateData";
 import FramerAnimation from "../Animation/FramerAnimation";
-import HomeBtn from "../HomeBtn/HomeBtn";
+import GoBackBtn from "../GoBackBtn/GoBackBtn";
+import { useNavigate } from "react-router-dom";
 
 const LandLordForm = () => {
-  const [inputState, setInputState] = useState({
-    fullName: "",
-    phoneNumber: "",
-    houseName: "",
-    address: "",
-    price: "",
-  });
+  const navigate = useNavigate();
 
-  const changeHandler = (e) => {
-    setInputState({
-      ...inputState,
-      [e.target.target.name]: e.target.target.value,
-    });
+  const [fullName, setFullName] = useState("");
+  const [number, setNumber] = useState("");
+  const [houseName, setHouseName] = useState("");
+  const [image, setImage] = useState("");
+  const [address, setAddress] = useState("");
+  const [price, setPrice] = useState("");
+
+  const uploadHouse = (e) => {
+    e.preventDefault();
+
+    navigate("/HouseUploadSuccess");
   };
 
   return (
     <FramerAnimation>
-      <main className="form__wrapper">
-        <HomeBtn/>
-        <form className="landlord_form_container" method="POST">
+      <>
+        <GoBackBtn />
+        <form className="landlord_form_container" onSubmit={uploadHouse}>
           <div>
             <label>Enter full name</label>
             <input
               type="text"
               name="fullname"
-              value={inputState.fullName}
-              onChange={changeHandler}
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
               required
             />
           </div>
@@ -41,8 +42,8 @@ const LandLordForm = () => {
             <input
               type="number"
               name="phoneNumber"
-              value={inputState.phoneNumber}
-              onChange={changeHandler}
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
               required
             />
           </div>
@@ -52,15 +53,22 @@ const LandLordForm = () => {
             <input
               type="text"
               name="housename"
-              value={inputState.houseName}
-              onChange={changeHandler}
+              value={houseName}
+              onChange={(e) => setHouseName(e.target.value)}
               required
             />
           </div>
 
           <div>
             <label>Upload image of apartment</label>
-            <input type="file" name="houseimage" required multiple />
+            <input
+              type="file"
+              name="houseimage"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              required
+              multiple
+            />
           </div>
 
           <div>
@@ -78,8 +86,8 @@ const LandLordForm = () => {
               type="text"
               name="address"
               placeholder="House address, Name of city."
-              value={inputState.address}
-              onChange={changeHandler}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
               required
             />
           </div>
@@ -90,8 +98,8 @@ const LandLordForm = () => {
               type="number"
               name="price"
               placeholder="Amount per night"
-              value={inputState.price}
-              onChange={changeHandler}
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
               required
             />
           </div>
@@ -99,7 +107,7 @@ const LandLordForm = () => {
           <div>
             <label className="tc__wrapper">
               <input type="checkbox" name="terms" required />{" "}
-              <a href="#">Accept terms and conditions</a>
+              <a href="!#">Accept terms and conditions</a>
             </label>
           </div>
 
@@ -107,7 +115,7 @@ const LandLordForm = () => {
             <input type="submit" value="Submit" />
           </div>
         </form>
-      </main>
+      </>
     </FramerAnimation>
   );
 };

@@ -27,6 +27,7 @@ export const data = [
     avatar:
       "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png",
     phoneNumber: +234082373932,
+    address: "21 somewhere in Lagos."
   },
   {
     id: 2,
@@ -56,6 +57,7 @@ export const data = [
     avatar:
       "https://w7.pngwing.com/pngs/312/283/png-transparent-man-s-face-avatar-computer-icons-user-profile-business-user-avatar-blue-face-heroes.png",
     phoneNumber: +234138592834,
+    address: "229 somewhere in Ibandan."
   },
   {
     id: 3,
@@ -84,6 +86,7 @@ export const data = [
     host: "Mr Folushorun",
     avatar: "https://image.pngaaa.com/260/1721260-middle.png",
     phoneNumber: +234023423546,
+    address: "10 somewhere in Osun."
   },
   {
     id: 4,
@@ -113,6 +116,7 @@ export const data = [
     host: "Miss Angela",
     avatar: "https://image.pngaaa.com/477/81477-middle.png",
     phoneNumber: +234123943721,
+    address: "54 somewhere in Lagos."
   },
   {
     id: 5,
@@ -142,6 +146,7 @@ export const data = [
     host: "Efe Judith",
     avatar: "https://image.pngaaa.com/786/5345786-middle.png",
     phoneNumber: +234123943239,
+    address: "223 somewhere in Edo."
   },
   {
     id: 6,
@@ -172,6 +177,7 @@ export const data = [
     avatar:
       "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Free-Image.png",
     phoneNumber: +234123900239,
+    address: "213 somewhere in Rivers."
   },
   {
     id: 7,
@@ -202,6 +208,7 @@ export const data = [
     avatar:
       "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg",
     phoneNumber: +234122094339,
+    address: "028 somewhere in Edo."
   },
   {
     id: 8,
@@ -231,6 +238,7 @@ export const data = [
     host: "Mr James John",
     avatar: "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-File.png",
     phoneNumber: +234395340232,
+    address: "231 somewhere in Ogun."
   },
   {
     id: 9,
@@ -261,6 +269,7 @@ export const data = [
     avatar:
       "https://toppng.com/uploads/preview/avatar-png-11554021819gij72acuim.png",
     phoneNumber: +234305903022,
+    address: "21 somewhere in Port-harcourt."
   },
   {
     id: 10,
@@ -291,6 +300,7 @@ export const data = [
     avatar:
       "https://a0.muscache.com/im/pictures/user/1fd2b33b-e837-4f5e-aefd-f8acd68d0828.jpg?im_w=240",
     phoneNumber: +234995009342,
+    address: "34 somewhere in Bayelsa."
   },
   {
     id: 11,
@@ -321,6 +331,7 @@ export const data = [
     avatar:
       "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-File.png",
     phoneNumber: +234999436662,
+    address: "39 close somewhere in Lagos."
   },
   {
     id: 12,
@@ -351,5 +362,6 @@ export const data = [
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsRX6QzCX2rxKzfmn7VlsMYA0TYTW5Nt6o5g&usqp=CAU",
     phoneNumber: +234234527489,
+    address: "20 somewhere in Anambra."
   },
 ];

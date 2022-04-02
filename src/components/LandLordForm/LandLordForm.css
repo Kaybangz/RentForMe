@@ -19,6 +19,10 @@ label {
   font-size: 1.2rem;
 }
 
+select option {
+  font-family: "Nunito";
+}
+
 input,
 select {
   height: 40px;
@@ -27,8 +31,8 @@ select {
   border-radius: 5px;
   background-color: rgb(141, 19, 41);
   color: white;
-  padding: 10px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-family: "Nunito";
 }
 
 input[type="submit"] {
@@ -58,4 +62,19 @@ button {
   align-items: center;
   justify-content: flex-start;
   margin-top: .7rem;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family: "Nunito";
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: "Nunito";
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font-family: "Nunito";
 }

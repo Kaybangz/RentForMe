@@ -6,6 +6,9 @@ import SingleDisplay from "./components/SingleDisplay/SingleDisplay";
 import { data } from "./Data/Data";
 import BackToTop from "./components/BackToTopBtn/BackToTop";
 import LandLordForm from "./components/LandLordForm/LandLordForm";
+import { RentForm } from "./components/RentForm/RentForm";
+import RentingSuccess from "./components/RentingSuccess/RentingSuccess";
+import HouseUploadSuccess from "./components/HouseUploadSuccess/HouseUploadSuccess";
 
 
 const App = () => {
@@ -77,6 +80,9 @@ const App = () => {
             />
 
             <Route path="/landLordForm" element={<LandLordForm />} />
+            <Route path="/proceedToRent" element={<RentForm />} />
+            <Route path="/RentingSuccess" element={<RentingSuccess />} />
+            <Route path="/HouseUploadSuccess" element={<HouseUploadSuccess/>} />
           </Routes>
     
       </section>

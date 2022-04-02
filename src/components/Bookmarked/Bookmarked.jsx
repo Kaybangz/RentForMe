@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import HomeAnimation from "../Animation/HomeAnimation";
 import "./Bookmarked.css";
 import { Link } from "react-router-dom";
+import BookmarkAnimation from "../Animation/BookmarkAnimation";
 
 const Bookmarked = ({ bookmarked, deleteHandler }) => {
   return (
-    <HomeAnimation>
+    <BookmarkAnimation>
       <section>
         <div className="bookmark__wrapper">
           {bookmarked.map((item) => {
@@ -21,7 +22,7 @@ const Bookmarked = ({ bookmarked, deleteHandler }) => {
           })}
         </div>
       </section>
-    </HomeAnimation>
+      </BookmarkAnimation>
   );
 };
 

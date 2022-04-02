@@ -13,7 +13,7 @@ const FramerAnimation = ({ children }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ type: "spring", stiffness: 100 }}
+      transition={{ type: "spring", stiffness: 120 }}
     >
       {children}
     </motion.div>
