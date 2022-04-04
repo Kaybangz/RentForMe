@@ -1,7 +1,6 @@
 .pagination__container {
     display: flex;
     margin-top: 1rem;
-    gap: 1rem;
 }
 
 .page__link {
@@ -14,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 15px;
 }
 
 .page__link:active {

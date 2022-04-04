@@ -34,6 +34,7 @@ const LandLordForm = () => {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
+              minLength="1"
             />
           </div>
 
@@ -45,22 +46,25 @@ const LandLordForm = () => {
               value={number}
               onChange={(e) => setNumber(e.target.value)}
               required
+              minLength="11"
+              maxLength="11"
             />
           </div>
 
           <div>
-            <label>Enter name of apartment</label>
+            <label>Enter name of house</label>
             <input
               type="text"
               name="housename"
               value={houseName}
               onChange={(e) => setHouseName(e.target.value)}
               required
+              minLength="5"
             />
           </div>
 
           <div>
-            <label>Upload image of apartment</label>
+            <label>Upload image(s) of house</label>
             <input
               type="file"
               name="houseimage"
@@ -72,7 +76,7 @@ const LandLordForm = () => {
           </div>
 
           <div>
-            <label>Apartment State</label>
+            <label>Location of house(state)</label>
             <select name="state" id="state">
               {stateData.map((state) => (
                 <option value={state}>{state}</option>
@@ -81,7 +85,7 @@ const LandLordForm = () => {
           </div>
 
           <div>
-            <label>Enter Apartment Address</label>
+            <label>Enter house Address</label>
             <input
               type="text"
               name="address"
@@ -89,6 +93,7 @@ const LandLordForm = () => {
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               required
+              minLength="1"
             />
           </div>
 
@@ -101,6 +106,8 @@ const LandLordForm = () => {
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               required
+              minLength="1"
+              maxLength="3"
             />
           </div>
 

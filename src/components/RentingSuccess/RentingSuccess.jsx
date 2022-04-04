@@ -8,7 +8,8 @@ const RentingSuccess = () => {
     <FramerAnimation>
       <HomeBtn />
       <div className="renting__success">
-        <h2>You have successfully rented this apartment!</h2>
+        <h2>You have successfully rented this apartment</h2>
+        <h3>Payment receipt would be sent to you via your email.</h3>
       </div>
     </FramerAnimation>
   );

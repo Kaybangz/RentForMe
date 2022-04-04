@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { data } from "../../Data/Data";
 import "./SingleDisplay.css";
 import { BsStarHalf, BsStarFill, BsCheck2Circle } from "react-icons/bs";
@@ -35,13 +35,8 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
 
   //Setting the react calender date
   const [value, onChange] = useState(new Date());
-
-  // let startMonth = value[0].toLocaleString('default', {month: 'long'});
-  // let endMonth = value[1].toLocaleString('default', {month: 'long'});
-
   //Setting the min date
   const minDate = new Date();
-
   //Calculating the date range
   let numOfDays = ((value[0] - value[1]) / -86399999).toFixed(0) - 0;
 
@@ -249,10 +244,16 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                   <div className="booking_btn_container">
                     {showDetails ? (
                       <Link to="/proceedToRent" className="proceed__link">
-                        <button className="booking__btn">Proceed</button>
+                        <button
+                          style={{ fontFamily: "Nunito" }}
+                          className="booking__btn"
+                        >
+                          Proceed
+                        </button>
                       </Link>
                     ) : (
                       <button
+                        style={{ fontFamily: "Nunito" }}
                         onClick={bookHouseHandler}
                         className="booking__btn"
                       >

@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Pagination.css";
 
 const Pagination = ({ housePerPage, totalHouseList, paginate }) => {
+
   //Empty array to contain number of pages
   const pageNumbers = [];
 
@@ -9,6 +10,10 @@ const Pagination = ({ housePerPage, totalHouseList, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalHouseList / housePerPage); i++) {
     pageNumbers.push(i);
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pageNumbers]);
 
   return (
     <nav className="pagination__container">

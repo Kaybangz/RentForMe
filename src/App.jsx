@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MainDisplay from "./components/MainDisplay/MainDisplay";
 import SingleDisplay from "./components/SingleDisplay/SingleDisplay";
-import { data } from "./Data/Data";
 import BackToTop from "./components/BackToTopBtn/BackToTop";
 import LandLordForm from "./components/LandLordForm/LandLordForm";
 import { RentForm } from "./components/RentForm/RentForm";
@@ -30,7 +29,7 @@ const App = () => {
 
     setTimeout(() => {
       setActive(active);
-    }, 500);
+    }, 400);
   };
 
   //Saving bookmarked houses to local storage
@@ -52,8 +51,6 @@ const App = () => {
 
     setBookmarked(existInBookmark);
   };
-
-  const location = useLocation();
 
   return (
     <main className="main__wrapper">

@@ -36,6 +36,7 @@ export const RentForm = () => {
               type="text"
               name="firstname"
               value={firstName}
+              minLength="1"
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
@@ -49,14 +50,17 @@ export const RentForm = () => {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
+              minLength="1"
             />
           </div>
 
           <div>
             <label>Enter mobile number</label>
             <input
-              type="number"
+              type="tel"
               name="phoneNumber"
+              minLength="11"
+              maxLength="11"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
               required
@@ -71,6 +75,7 @@ export const RentForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              minLength="1"
             />
           </div>
 
@@ -85,8 +90,10 @@ export const RentForm = () => {
               inputmode="numeric"
               pattern="[0-9\s]{13,19}"
               autocomplete="cc-number"
-              maxlength="19"
+              maxlength="16"
+              minLength="16"
               placeholder="xxxx xxxx xxxx xxxx"
+              required
             />
           </div>
 
@@ -94,22 +101,26 @@ export const RentForm = () => {
             <label>Expiry date</label>
             <span class="expiration">
               <input
-                type="text"
+                type="tel"
                 name="month"
                 placeholder="MM"
                 maxlength="2"
                 size="2"
+                minLength="2"
                 value={expMonth}
                 onChange={(e) => setExpMonth(e.target.value)}
+                required
               />
               <input
-                type="text"
+                type="tel"
                 name="year"
                 placeholder="YY"
                 maxlength="2"
                 size="2"
+                minLength="2"
                 value={expYear}
                 onChange={(e) => setExpYear(e.target.value)}
+                required
               />
             </span>
           </div>
@@ -117,8 +128,9 @@ export const RentForm = () => {
           <div>
             <label>CVV</label>
             <input
-              type="number"
+              type="tel"
               name="cvv"
+              minLength="3"
               maxlength="4"
               value={cvv}
               onChange={(e) => setCVV(e.target.value)}
