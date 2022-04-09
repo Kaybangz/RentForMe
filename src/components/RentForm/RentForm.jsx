@@ -52,7 +52,7 @@ export const RentForm = () => {
     //credit card regex
     const ccRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
 
-    if (!values.name) {
+    if (values.name === "") {
       errors.name = "Enter full name";
     }
     if (values.email === "") {
@@ -67,7 +67,7 @@ export const RentForm = () => {
     if (!values.expMonth && !values.expYear) {
       errors.expDate = "Enter month and year of expiration";
     }
-    if (!values.cvv) {
+    if (values.cvv === "") {
       errors.cvv = "Enter cvv number";
     } 
     else if (!emailRegex.test(values.email)) {
@@ -98,7 +98,6 @@ export const RentForm = () => {
               value={inputValues.name}
               minLength="1"
               onChange={changeHandler}
-              required
             />
             <p>{inputErrs.name}</p>
           </div>
@@ -110,7 +109,6 @@ export const RentForm = () => {
               name="email"
               value={inputValues.email}
               onChange={changeHandler}
-              required
               minLength="1"
             />
             <p>{inputErrs.email}</p>
@@ -125,7 +123,6 @@ export const RentForm = () => {
               maxLength="11"
               value={inputValues.number}
               onChange={changeHandler}
-              required
             />
             <p>{inputErrs.number}</p>
           </div>
@@ -142,7 +139,6 @@ export const RentForm = () => {
               value={inputValues.ccNum}
               onChange={changeHandler}
               placeholder="xxxx xxxx xxxx xxxx"
-              required
             />
             <p>{inputErrs.ccNumber}</p>
           </div>
@@ -186,7 +182,6 @@ export const RentForm = () => {
               maxLength="4"
               value={inputValues.cvv}
               onChange={changeHandler}
-              required
             />
             <p>{inputErrs.cvv}</p>
           </div>
