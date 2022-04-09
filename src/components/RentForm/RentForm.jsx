@@ -7,64 +7,100 @@ import "./RentForm.css";
 export const RentForm = () => {
   const navigate = useNavigate();
 
-  //State for handling the input fields
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [number, setNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [ccNumber, setCCNumber] = useState("");
-  const [expMonth, setExpMonth] = useState("");
-  const [expYear, setExpYear] = useState("");
-  const [cvv, setCVV] = useState("");
+  //State for handling input fields
+  const [inputValues, setInputValues] = useState({
+    name: "",
+    number: "",
+    email: "",
+    ccNum: "",
+    expMonth: "",
+    expYear: "",
+    cvv: "",
+  });
 
-  const rentApartment = (e) => {
+  //State for handling errors
+  const [inputErrs, setInputErrs] = useState({});
+
+  const [isValid, setIsValid] = useState(false);
+
+  //Input fields onchange handler
+  const changeHandler = (e) => {
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value });
+  };
+
+  //Submit function
+  const submitForm = (e) => {
     e.preventDefault();
+    setInputErrs(validateForm(inputValues));
+    setIsValid(true);
 
-    navigate("/RentingSuccess");
+    if (isValid && Object.keys(inputErrs).length === 0) {
+      navigate('/RentingSuccess')
+    }
+  };
+
+  //Form validation
+  const validateForm = (values) => {
+    const errors = {};
+
+    //Email regex
+    var emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //cvv regex
+    var cvvRegex = /^[0-9]{3,4}$/;
+    //credit card regex
+    const ccRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
+
+    if (!values.name) {
+      errors.name = "Enter full name";
+    }
+    if (values.email === "") {
+      errors.email = "Enter email address";
+    }
+    if (values.number < 10 || values.number === "") {
+      errors.number = "Enter mobile number";
+    }
+    if (values.ccNumber === "") {
+      errors.ccNumber = "Enter credit card number";
+    }
+    if (!values.expMonth && !values.expYear) {
+      errors.expDate = "Enter month and year of expiration";
+    }
+    if (!values.cvv) {
+      errors.cvv = "Enter cvv number";
+    } 
+    else if (!emailRegex.test(values.email)) {
+      errors.email = "Enter valid email address";
+    } 
+    else if (!ccRegex.test(values.ccNumber)) {
+      errors.ccNumber = "Enter valid credit card number";
+    } 
+    else if (!cvvRegex.test(values.cvv)) {
+      errors.cvv = "Enter valid cvv number";
+    }
+
+    return errors;
   };
 
   return (
     <FramerAnimation>
       <>
         <GoBackBtn />
-        <form className="rent_form_container" onSubmit={rentApartment}>
+        <form className="rent_form_container" onSubmit={submitForm}>
           <h2>Customer Information</h2>
 
           <div>
-            <label>Enter first name</label>
+            <label>Enter full name</label>
             <input
               type="text"
-              name="firstname"
-              value={firstName}
+              name="name"
+              value={inputValues.name}
               minLength="1"
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={changeHandler}
               required
             />
-          </div>
-
-          <div>
-            <label>Enter Last name</label>
-            <input
-              type="text"
-              name="lastname"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-              minLength="1"
-            />
-          </div>
-
-          <div>
-            <label>Enter mobile number</label>
-            <input
-              type="tel"
-              name="phoneNumber"
-              minLength="11"
-              maxLength="11"
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
-              required
-            />
+            <p>{inputErrs.name}</p>
           </div>
 
           <div>
@@ -72,11 +108,26 @@ export const RentForm = () => {
             <input
               type="email"
               name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={inputValues.email}
+              onChange={changeHandler}
               required
               minLength="1"
             />
+            <p>{inputErrs.email}</p>
+          </div>
+
+          <div>
+            <label>Enter mobile number</label>
+            <input
+              type="tel"
+              name="number"
+              minLength="11"
+              maxLength="11"
+              value={inputValues.number}
+              onChange={changeHandler}
+              required
+            />
+            <p>{inputErrs.number}</p>
           </div>
 
           <h2 className="second__heading">Payment Information</h2>
@@ -84,45 +135,46 @@ export const RentForm = () => {
           <div>
             <label>Credit card number</label>
             <input
-              value={ccNumber}
-              onChange={(e) => setCCNumber(e.target.value)}
+              name="ccNum"
               type="tel"
-              inputmode="numeric"
-              pattern="[0-9\s]{13,19}"
-              autocomplete="cc-number"
-              maxlength="16"
+              maxLength="16"
               minLength="16"
+              value={inputValues.ccNum}
+              onChange={changeHandler}
               placeholder="xxxx xxxx xxxx xxxx"
               required
             />
+            <p>{inputErrs.ccNumber}</p>
           </div>
 
           <div>
             <label>Expiry date</label>
-            <span class="expiration">
+            <span className="expiration">
               <input
                 type="tel"
-                name="month"
+                name="expMonth"
                 placeholder="MM"
-                maxlength="2"
+                maxLength="2"
                 size="2"
                 minLength="2"
-                value={expMonth}
-                onChange={(e) => setExpMonth(e.target.value)}
+                value={inputValues.expMonth}
+                onChange={changeHandler}
                 required
               />
+              <span>/</span>
               <input
                 type="tel"
-                name="year"
+                name="expYear"
                 placeholder="YY"
-                maxlength="2"
+                maxLength="2"
                 size="2"
                 minLength="2"
-                value={expYear}
-                onChange={(e) => setExpYear(e.target.value)}
+                value={inputValues.expYear}
+                onChange={changeHandler}
                 required
               />
             </span>
+            <p>{inputErrs.expDate}</p>
           </div>
 
           <div>
@@ -131,11 +183,12 @@ export const RentForm = () => {
               type="tel"
               name="cvv"
               minLength="3"
-              maxlength="4"
-              value={cvv}
-              onChange={(e) => setCVV(e.target.value)}
+              maxLength="4"
+              value={inputValues.cvv}
+              onChange={changeHandler}
               required
             />
+            <p>{inputErrs.cvv}</p>
           </div>
 
           <div>

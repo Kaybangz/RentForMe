@@ -60,7 +60,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
         <GoBackBtn />
 
         {houseData ? (
-          <main className="home__wrapper">
+          <main key={houseData.id} className="home__wrapper">
             <section className="home__container">
               <div className="main">
                 <h1 className="houseName__header">{houseData.name}</h1>
@@ -73,7 +73,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                 </div>
                 <div className="sub__images">
                   {houseData.images.map((image) => {
-                    return <img src={image} alt={image} />;
+                    return <img key={image} src={image} alt={image} />;
                   })}
                 </div>
 
@@ -126,7 +126,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                   <h4 className="amenities">Amenities</h4>
                   {houseData.amenities.map((amenity) => {
                     return (
-                      <li>
+                      <li key={amenity}>
                         <BsCheck2Circle className="amenity__icon" />
                         {amenity}
                       </li>

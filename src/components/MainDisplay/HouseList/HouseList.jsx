@@ -36,10 +36,6 @@ const HouseList = ({ houses, bookmarked, deleteHandler }) => {
                   <h4>{house.state}</h4>
                 </div>
 
-                {/* See more button */}
-                <Link className="single_display_link" to={`/rent/${house.id}`}>
-                  <button>See more</button>
-                </Link>
               </div>
             </Link>
           );

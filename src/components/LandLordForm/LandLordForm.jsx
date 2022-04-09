@@ -8,59 +8,100 @@ import { useNavigate } from "react-router-dom";
 const LandLordForm = () => {
   const navigate = useNavigate();
 
-  const [fullName, setFullName] = useState("");
-  const [number, setNumber] = useState("");
-  const [houseName, setHouseName] = useState("");
-  const [image, setImage] = useState("");
-  const [address, setAddress] = useState("");
-  const [price, setPrice] = useState("");
-
-  const uploadHouse = (e) => {
-    e.preventDefault();
-
-    navigate("/HouseUploadSuccess");
-  };
+    //State for handling input fields
+    const [inputValues, setInputValues] = useState({
+      name: "",
+      number: "",
+      houseName: "",
+      houseAddress: "",
+      price: ""
+    });
+  
+    //State for handling errors
+    const [inputErrs, setInputErrs] = useState({});
+  
+    const [isValid, setIsValid] = useState(false);
+  
+    //Input fields onchange handler
+    const changeHandler = (e) => {
+      const { name, value } = e.target;
+      setInputValues({ ...inputValues, [name]: value });
+    };
+  
+    //Submit function
+    const submitForm = (e) => {
+      e.preventDefault();
+      setInputErrs(validateForm(inputValues));
+      setIsValid(true);
+  
+      if (isValid && Object.keys(inputErrs).length === 0) {
+        navigate('/HouseUploadSuccess')
+      }
+    };
+  
+    //Form validation
+    const validateForm = (values) => {
+      const errors = {};
+  
+      if (!values.name) {
+        errors.name = "Enter full name";
+      }
+      if (values.number < 10 || values.number === "") {
+        errors.number = "Enter mobile number";
+      }
+      if (values.houseName === "") {
+        errors.houseName = "Enter house name";
+      }
+      if (values.houseAddress === "") {
+        errors.houseAddress = "Enter house address";
+      } 
+      if (values.price === "") {
+        errors.price = "Enter price";
+      } 
+  
+      return errors;
+    };
 
   return (
     <FramerAnimation>
       <>
         <GoBackBtn />
-        <form className="landlord_form_container" onSubmit={uploadHouse}>
+        <form className="landlord_form_container" onSubmit={submitForm}>
           <div>
             <label>Enter full name</label>
             <input
               type="text"
-              name="fullname"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              required
+              name="name"
+              value={inputValues.name}
+              onChange={changeHandler}
               minLength="1"
             />
+            <p>{inputErrs.name}</p>
           </div>
 
           <div>
             <label>Enter mobile number</label>
             <input
               type="number"
-              name="phoneNumber"
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
-              required
+              name="number"
+              value={inputValues.number}
+              onChange={changeHandler}
               minLength="11"
               maxLength="11"
             />
+            <p>{inputErrs.number}</p>
           </div>
 
           <div>
             <label>Enter name of house</label>
             <input
               type="text"
-              name="housename"
-              value={houseName}
-              onChange={(e) => setHouseName(e.target.value)}
-              required
+              name="houseName"
+              value={inputValues.houseName}
+              onChange={changeHandler}
               minLength="5"
             />
+            <p>{inputErrs.houseName}</p>
           </div>
 
           <div>
@@ -68,8 +109,6 @@ const LandLordForm = () => {
             <input
               type="file"
               name="houseimage"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
               required
               multiple
             />
@@ -88,13 +127,13 @@ const LandLordForm = () => {
             <label>Enter house Address</label>
             <input
               type="text"
-              name="address"
+              name="houseAddress"
               placeholder="House address, Name of city."
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
+              value={inputValues.houseAddress}
+              onChange={changeHandler}
               minLength="1"
             />
+            <p>{inputErrs.houseAddress}</p>
           </div>
 
           <div>
@@ -103,12 +142,12 @@ const LandLordForm = () => {
               type="number"
               name="price"
               placeholder="Amount per night"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              required
+              value={inputValues.price}
+              onChange={changeHandler}
               minLength="1"
               maxLength="3"
             />
+            <p>{inputErrs.price}</p>
           </div>
 
           <div>
