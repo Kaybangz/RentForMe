@@ -7,6 +7,10 @@ import { VscLocation } from "react-icons/vsc";
 //Destructured the various props gotten from the mainDisplay component to utilize them here
 const HouseList = ({ houses, bookmarked, deleteHandler }) => {
 
+  const takeToTop = () => {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div className="wrapper">
       {/* The bookmarked data gotten from the Bookmarked component */}
@@ -15,7 +19,7 @@ const HouseList = ({ houses, bookmarked, deleteHandler }) => {
         {/* Looping through the destructured houses prop to display the various property values */}
         {houses.map((house) => {
           return (
-            <Link key={house.id} className="body__link" to={`/rent/${house.id}`}>
+            <Link key={house.id} className="body__link" to={`/rent/${house.id}`} onClick={takeToTop}>
               <div key={house.id} className="house__container">
                 <img
                   src={house.cover}
