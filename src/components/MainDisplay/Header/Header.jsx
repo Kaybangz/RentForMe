@@ -34,7 +34,7 @@ const Header = ({
           <form onSubmit={submitSearch}>
             <input
               type="text"
-              placeholder="Search house(s) by state..."
+              placeholder="Search houses by state..."
               value={searchValue}
               onChange={handleSearchKey}
             />

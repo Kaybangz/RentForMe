@@ -41,7 +41,7 @@
 
 .host__section h1 {
   font-size: .9rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
   margin-right: 0.3rem;
   text-transform: uppercase;
 }
@@ -62,7 +62,7 @@
   display: flex;
   font-size: 1rem;
   justify-content: flex-start;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .host__number span {
@@ -74,7 +74,7 @@
   display: flex;
   font-size: 1rem;
   justify-content: flex-start;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .house__address span {
@@ -83,13 +83,13 @@
 }
 
 .house__address .icon {
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .houseName__header {
   font-size: 1.6rem;
   margin-bottom: 0.9rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .price__bookmark {
@@ -101,7 +101,7 @@
 
 .price__bookmark h2 {
   font-size: 1.3rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .bookmark__btn {
@@ -131,18 +131,20 @@
   align-items: center;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .home__container p {
   font-size: 1.1rem;
   line-height: 1.6rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
+  text-align: justify;
+  width: 100%;
 }
 
 .review__icon {
   margin-right: 3px;
-  color: rgb(153, 17, 42);
+  color: rgb(151, 9, 35) !important;
 }
 
 li {
@@ -152,17 +154,17 @@ li {
   font-size: 0.9rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: rgb(153, 17, 42);
+  color: rgb(56, 54, 54) !important;
 }
 
 .amenities {
   font-size: 1.7rem;
   margin-bottom: 1rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .amenity__icon {
-  color: rgb(255, 56, 92);
+  color: rgb(151, 9, 35) !important;
   font-size: 1.2rem;
   margin-right: 3px;
   font-weight: bolder;
@@ -175,7 +177,7 @@ li {
 .booking__container h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .booking__msg {
@@ -187,7 +189,7 @@ li {
   width: 100%;
   margin-top: 1.2rem;
   font-size: 1.1rem;
-  color: rgb(119, 5, 26);
+  color: rgb(56, 54, 54) !important;
 }
 
 .booking__msg {
@@ -270,6 +272,14 @@ li {
   .home__container p {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .host__section img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
   }
 }
 

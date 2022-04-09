@@ -9,7 +9,7 @@
     height: 30px;
     border-radius: 50%;
     background-color: rgb(255, 56, 92);
-    color: white;
+    color: white !important;
     display: flex;
     align-items: center;
     justify-content: center;

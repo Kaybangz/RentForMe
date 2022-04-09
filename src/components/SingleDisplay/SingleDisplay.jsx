@@ -89,7 +89,7 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                       {active ? (
                         <AiFillHeart />
                       ) : (
-                        <AiOutlineHeart style={{ color: "rgb(119, 5, 26)" }} />
+                        <AiOutlineHeart style={{ color: "rgb(56, 54, 54)" }} />
                       )}
                     </button>
                   </div>
