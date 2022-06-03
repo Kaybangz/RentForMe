@@ -25,7 +25,7 @@ const Pagination = ({ housePerPage, totalHouseList, paginate }) => {
             onClick={() => paginate(number)}
             className="page__link"
           >
-            {number}
+            <span>{number}</span>
           </li>
         );
       })}

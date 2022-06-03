@@ -8,14 +8,17 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: rgb(255, 56, 92);
-    color: white !important;
+    background-color: transparent;
+    color: black !important;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 15px;
+    border: 1px solid rgb(219, 45, 77);
 }
 
-.page__link:active {
+.page__link:hover{
     background-color: rgb(219, 45, 77);
+    color: white !important;
 }
+

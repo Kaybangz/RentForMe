@@ -211,18 +211,18 @@ const SingleDisplay = ({ active, handleBookmarked, bookmarked }) => {
                         <p
                           style={{
                             marginTop: "1rem",
-                            marginBottom: "1.5rem",
+                            marginBottom: "1rem",
                             fontSize: "1rem",
                             fontWeight: "700",
                             borderBottom: "none",
                           }}
                         >
-                          (Please note that you are required to leave on the
+                          *Please note that you are required to leave on the
                           morning of {value[1].getDate() + 1}{" "}
                           {value[1].toLocaleString("default", {
                             month: "long",
                           })}{" "}
-                          {value[1].getFullYear()}).
+                          {value[1].getFullYear()}.
                         </p>
                         <h4 className="total_cost_header">
                           Rent: ${houseData.price} * {numOfDays} = $

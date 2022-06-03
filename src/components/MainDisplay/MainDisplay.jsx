@@ -40,9 +40,9 @@ const MainDisplay = ({ handleBookmarked, bookmarked, deleteHandler }) => {
 
   //Search for house(s) by state
   const handleSearchResults = () => {
-    const houseList = data;
+    // const houseList = data;
 
-    const filteredLists = houseList.filter((house) =>
+    const filteredLists = currentData.filter((house) =>
       house.state.toLowerCase().includes(searchKey.toLowerCase())
     );
 
@@ -68,7 +68,9 @@ const MainDisplay = ({ handleBookmarked, bookmarked, deleteHandler }) => {
         />
 
         {/* House listing section */}
-        {!houseData.length ? <EmptyList/> : (
+        {!houseData.length ? (
+          <EmptyList />
+        ) : (
           <HouseList
             houses={currentData}
             handleBookmarked={handleBookmarked}
@@ -86,7 +88,7 @@ const MainDisplay = ({ handleBookmarked, bookmarked, deleteHandler }) => {
           paginate={paginate}
         />
       </div>
-      <Footer/>
+      <Footer />
     </HomeAnimation>
   );
 };

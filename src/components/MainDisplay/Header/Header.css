@@ -73,18 +73,18 @@
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(219, 213, 213);
+  color: lightgray;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: rgb(219, 213, 213);
+  color: lightgray;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: rgb(219, 213, 213);
+  color: lightgray;
 }
 
 .searchBar__container span {
